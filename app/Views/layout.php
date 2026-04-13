@@ -41,10 +41,10 @@
 <body>
 
     <!-- ======= Header ======= -->
-    <?= $this->include('components/header') ?>
+    <?= $this->include('components/header.php') ?>
 
     <!-- ======= Sidebar ======= -->
-    <?= $this->include('components/sidebar') ?>
+    <?= $this->include('components/sidebar.php') ?>
 
     <main id="main" class="main">
 
@@ -81,7 +81,7 @@
 
     </main><!-- End #main -->
 
-    <?= $this->include('components/footer') ?>
+    <?= $this->include('components/footer.php') ?>
 
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
