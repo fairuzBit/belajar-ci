@@ -7,7 +7,7 @@ use CodeIgniter\HTTP\ResponseInterface;
 
 class TransaksiController extends BaseController
 {
-    public function index()
+   public function index(): string
     {
         return view('v_keranjang');
     }

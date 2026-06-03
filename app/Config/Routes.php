@@ -5,9 +5,13 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
-$routes->get('/produk', 'ProdukController::index');
-$routes->get('/keranjang', 'TransaksiController::index');
-$routes->post('/produk/simpan','ProdukController::simpan');
-$routes->put('/produk/update/(:num)','ProdukController::update/$1');
-$routes->delete('/produk/delete/(:num)','ProdukController::delete/$1');
+$routes->get('login', 'AuthController::login');
+$routes->post('login', 'AuthController::login');
+$routes->get('logout', 'AuthController::logout');
+
+$routes->get('/', 'Home::index', ['filter' => 'auth']);
+
+
+$routes->get('produk', 'ProdukController::index', ['filter' => 'auth']);
+$routes->get('keranjang', 'TransaksiController::index', ['filter' => 'auth']);
+$routes->get('profile', 'ProfileController::index', ['filter' => 'role']);
