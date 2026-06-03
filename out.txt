@@ -1,0 +1,17 @@
+Codeigniter4 - Read Data and
+Validation
+Pada tutorial sebelumnya, telah mengatur konfigurasi untuk menghubungkan proyek
+dengan database di localhost. Kemudian, pembuatan beberapa tabel yang diperlukan
+dalam project berhasil dilakukan dengan memanfaatkan fitur migration pada
+CodeIgniter. Setelah tabel tersedia, pembuatan data dummy pada table master (User
+dan Product) dapat dilakukan dengan mudah menggunakan fitur seeder.
+
+Pada tutorial ini, akan melakukan Read Data yang sudah ada di database, sehingga
+data yang tersimpan pada table di database itu bisa digunakan atau ditampilkan pada
+website.
+Modifikasi table (menambah kolom) menggunakan migration
+Menampilkan (read) data product
+Menggunakan (read) data user
+Menambahkan Validation pada form
+
+
