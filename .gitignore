@@ -28,3 +28,4 @@ phpunit.xml
 # 5. OS Generated files
 .DS_Store
 Thumbs.db
+.pdf
