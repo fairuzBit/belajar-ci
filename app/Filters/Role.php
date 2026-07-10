@@ -14,16 +14,15 @@ class Role implements FilterInterface
             return redirect()->to(site_url('login'));
         }
 
-        if (session()->get('role') == 'admin') {
-            return redirect()->to(site_url('/'));
+        if ($arguments) {
+            $role = session()->get('role');
+            if (!in_array($role, $arguments)) {
+                return redirect()->to(site_url('/'))->with('error', 'Anda tidak memiliki akses ke halaman ini');
+            }
         }
-
     }
-
-    //--------------------------------------------------------------------
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        // Do something here
     }
 }

@@ -9,6 +9,13 @@
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
+    <?php $diskon = get_today_discount(); ?>
+    <?php if ($diskon) : ?>
+      <div class="alert alert-success text-center py-1 px-3 mb-0" style="font-size: 14px;">
+        Diskon Hari Ini: Rp <?= number_format($diskon['nominal'], 0, ',', '.') ?>
+      </div>
+    <?php endif; ?>
+
     <div class="search-bar">
       <form class="search-form d-flex align-items-center" method="POST" action="#">
         <input type="text" name="query" placeholder="Search" title="Enter search keyword">
@@ -183,29 +190,9 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="profile">
                 <i class="bi bi-person"></i>
                 <span>My Profile</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-gear"></i>
-                <span>Account Settings</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                <i class="bi bi-question-circle"></i>
-                <span>Need Help?</span>
               </a>
             </li>
             <li>
