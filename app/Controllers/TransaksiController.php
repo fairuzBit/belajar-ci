@@ -33,9 +33,14 @@ class TransaksiController extends BaseController
         $cartContent = $this->cart->content();
         $items = ($cartContent && isset($cartContent->items)) ? $cartContent->items : [];
 
+        $total = 0;
+        foreach ($items as $item) {
+            $total += $item['price'] * $item['qty'];
+        }
+
         $data = [
             'items' => $items,
-            'total' => $this->cart->total(),
+            'total' => $total,
             'discount' => $diskon,
             'discount_nominal' => $discountNominal
         ];
@@ -83,9 +88,14 @@ class TransaksiController extends BaseController
         $cartContent = $this->cart->content();
         $items = ($cartContent && isset($cartContent->items)) ? $cartContent->items : [];
 
+        $total = 0;
+        foreach ($items as $item) {
+            $total += $item['price'] * $item['qty'];
+        }
+
         $data = [
             'items' => $items,
-            'total' => $this->cart->total(),
+            'total' => $total,
             'discount' => $diskon,
             'discount_nominal' => $discountNominal
         ];

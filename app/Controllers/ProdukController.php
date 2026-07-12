@@ -57,8 +57,8 @@ class ProdukController extends BaseController
         ];
 
         if ($this->request->getPost('check') == 1) {
-            if ($dataProduk['foto'] != '' and file_exists("img/" . $dataProduk['foto'] . "")) {
-                unlink("img/" . $dataProduk['foto']);
+            if ($dataProduk['foto'] != '' and file_exists(FCPATH . "img/" . $dataProduk['foto'])) {
+                unlink(FCPATH . "img/" . $dataProduk['foto']);
             }
 
             $dataFoto = $this->request->getFile('foto');
@@ -80,8 +80,8 @@ class ProdukController extends BaseController
     {
         $dataProduk = $this->productModel->find($id);
         
-        if ($dataProduk['foto'] != '' and file_exists("img/" . $dataProduk['foto'] . "")) {
-            unlink("img/" . $dataProduk['foto']);
+        if ($dataProduk['foto'] != '' and file_exists(FCPATH . "img/" . $dataProduk['foto'])) {
+            unlink(FCPATH . "img/" . $dataProduk['foto']);
         }
 
         $this->productModel->delete($id);

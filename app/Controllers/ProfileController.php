@@ -41,7 +41,7 @@ class ProfileController extends BaseController
 
         $password = $this->request->getPost('password');
         if (!empty($password)) {
-            $rules['password'] = 'min_length[7]';
+            $rules['password'] = 'min_length[7]|numeric';
         }
 
         if (!$this->validate($rules)) {

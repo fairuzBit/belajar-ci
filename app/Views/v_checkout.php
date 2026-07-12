@@ -9,7 +9,7 @@
     <div class="col-lg-6">
         <?= form_open('buy', 'class="row g-3"') ?>
         <?= form_hidden('username', session()->get('username')) ?>
-        <?= form_hidden('total_harga', '', ['id' => 'total_harga']) ?>
+        <input type="hidden" name="total_harga" id="total_harga" value="">
 
         <div class="col-12">
             <?= form_label('Nama', 'nama', ['class' => 'form-label']) ?>
