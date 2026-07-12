@@ -30,8 +30,11 @@ class TransaksiController extends BaseController
         $diskon = get_today_discount();
         $discountNominal = $diskon ? $diskon['nominal'] : 0;
 
+        $cartContent = $this->cart->content();
+        $items = ($cartContent && isset($cartContent->items)) ? $cartContent->items : [];
+
         $data = [
-            'items' => $this->cart->content(),
+            'items' => $items,
             'total' => $this->cart->total(),
             'discount' => $diskon,
             'discount_nominal' => $discountNominal
@@ -77,8 +80,11 @@ class TransaksiController extends BaseController
         $diskon = get_today_discount();
         $discountNominal = $diskon ? $diskon['nominal'] : 0;
 
+        $cartContent = $this->cart->content();
+        $items = ($cartContent && isset($cartContent->items)) ? $cartContent->items : [];
+
         $data = [
-            'items' => $this->cart->content(),
+            'items' => $items,
             'total' => $this->cart->total(),
             'discount' => $diskon,
             'discount_nominal' => $discountNominal
@@ -132,7 +138,8 @@ class TransaksiController extends BaseController
 
     public function buy()
     {
-        $cartItems = $this->cart->content();
+        $cartContent = $this->cart->content();
+        $cartItems = ($cartContent && isset($cartContent->items)) ? $cartContent->items : [];
         if (empty($cartItems)) {
             return redirect()->back();
         }

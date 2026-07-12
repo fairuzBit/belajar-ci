@@ -13,6 +13,6 @@ abstract class BaseController extends Controller
     {
         parent::initController($request, $response, $logger);
 
-        helper(['discount', 'form']);
+        helper(['discount', 'form', 'number']);
     }
 }
